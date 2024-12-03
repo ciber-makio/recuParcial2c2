@@ -1,9 +1,14 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "group of tests for vivir solo" {
+  const efec = new Efectivo()
+  const  lionel = new Persona(efectivo = 100000, pagoPreferido = efec,  mesActual = 1, salario = 200000)
+  const tv = new Objeto(valor = 50000)
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "comprar algo" {
+    lionel.comprar(tv)
+    lionel.recibirCompra(tv)
+    assert.that(lionel.compras.contains(tv))
   }
 
 }
